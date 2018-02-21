@@ -199,15 +199,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\DatabaseCalls.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Album.cs" />
-    <Compile Include="Models\Artist.cs" />
-    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ModelContextEntities.cs" />
@@ -278,9 +274,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Store\Details.cshtml" />
-    <Content Include="Views\Store\Browse.cshtml" />
-    <Content Include="Views\Store\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

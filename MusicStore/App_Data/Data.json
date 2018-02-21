@@ -23,11 +23,11 @@
 
   },
   {
-    "artist": "Bad Street Boys",
+    "artist": "Blue",
     "duration": "377.02485",
     "Genres": "Rock",
     "AlbumId": "28",
-    "ImageUrl": "https://musicimage.xboxlive.com/content/music.B13EB907-0100-11DB-89CA-0019B92A3933/image?locale=en-US",
+    "ImageUrl": "../Content/BlueOneLove.jpg",
    "Price": "$25",
     "title": "One Love",
     "GenreId": "5",
