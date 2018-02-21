@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MusicStore.Models;
+using MusicStore.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +12,9 @@ namespace MusicStore.Controllers
     {
         public ActionResult Index()
         {
-             return View();
+            DatabaseCallImpl dbc = new DatabaseCallImpl(); 
+            List<ModelContextEntities> data =dbc.getAllData();
+             return View(data);
            
         }
 

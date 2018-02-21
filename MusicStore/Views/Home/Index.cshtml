@@ -1,41 +1,39 @@
-﻿
+﻿@model IEnumerable<MusicStore.Models.ModelContextEntities>
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home";
 }
 
 <div class="jumbotron">
     <h1>Songs on a Roll</h1>
-    
-    <p><button type="button" class="btn btn-primary btn-large" onclick="location.href='@Url.Action("Index", "Items")'">Music Is Life&raquo;</button></p>
+   
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-
+@foreach (var dataset in Model)
+{
+  
+       <div class="card">
+            <div class="card-block well">
+                <div class="row">
+                    <div class="col-md-6">
+                        Song:<b> @Html.DisplayFor(modelItem => dataset.Title)</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        Artist: <b>@Html.DisplayFor(modelItem => dataset.Artist)</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        Duration:<b> @Html.DisplayFor(modelItem => dataset.Duration)</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        Price:<b> @Html.DisplayFor(modelItem => dataset.Price)</b>
+                    </div>
+                </div>
+            </div>
     </div>
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-4">
-
-    </div>
-    <div class="col-md-4">
-
-    </div>
-
-
-
-</div>
+}
