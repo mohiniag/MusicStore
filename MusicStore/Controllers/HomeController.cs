@@ -13,8 +13,8 @@ namespace MusicStore.Controllers
         public ActionResult Index()
         {
             DatabaseCallImpl dbc = new DatabaseCallImpl(); 
-            List<ModelContextEntities> data =dbc.getAllData();
-             return View(data);
+            List<DataContentsModel> data =dbc.getAllData();
+            return View(data);
            
         }
 

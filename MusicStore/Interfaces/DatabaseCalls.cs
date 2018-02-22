@@ -8,6 +8,6 @@ namespace MusicStore.Interfaces
 {
     interface DatabaseCalls
     {
-        List<Models.ModelContextEntities> getAllData();
+        List<Models.DataContentsModel> getAllData();
     }
 }

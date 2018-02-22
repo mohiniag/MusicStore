@@ -6,7 +6,7 @@
     <title>Gala - @ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="~/Content/HomePage.css" rel="stylesheet" />
     <script type="text/javascript">
        
         var appInsights=window.appInsights||function(config){
@@ -30,9 +30,7 @@
         <div class="container body-content">
             @RenderBody()
             <hr />
-            <footer>
-                Customer Happiness makes us happy!!!!!!!!!!
-            </footer>
+            
         </div>
 
         @Scripts.Render("~/bundles/jquery")

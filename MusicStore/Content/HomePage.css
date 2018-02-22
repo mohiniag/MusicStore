@@ -1,5 +1,4 @@
-﻿body {
-}
+﻿
 .card {
     font-size: 1em;
     overflow: hidden;
@@ -10,6 +9,7 @@
 }
 
 .card-block {
+    
     font-size: 1em;
     position: relative;
     margin: 0;
@@ -17,4 +17,13 @@
     border: none;
     border-top: 1px solid rgba(34, 36, 38, .1);
     box-shadow: none;
+}
+.abc {
+  
+   background: linear-gradient(141deg, #0fb8ad 10%, #1fc8db 51%, #2cb5e8 65%);
+    color: white;
+   border-radius: .28571429rem;
+   padding-bottom:2%;
+   padding-top:2%;
+   text-align:center;
 }

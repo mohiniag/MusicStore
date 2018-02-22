@@ -15,7 +15,7 @@ namespace MusicStore.Service
     public class DatabaseCallImpl : DatabaseCalls
     {
         public DatabaseCallImpl() { }
-        public List<ModelContextEntities> getAllData()
+        public List<DataContentsModel> getAllData()
         {
 
            // using (StreamReader r = new StreamReader("~/App_Data/Data.json"))
@@ -28,7 +28,7 @@ namespace MusicStore.Service
             //deserialize JSON from file  
             string data = File.ReadAllText(file);
            JavaScriptSerializer ser = new JavaScriptSerializer();
-           var songlist = JsonConvert.DeserializeObject < List<ModelContextEntities>>(data);
+           var songlist = JsonConvert.DeserializeObject < List<DataContentsModel>>(data);
             return songlist;
         }
     }

@@ -1,37 +1,51 @@
-﻿@model IEnumerable<MusicStore.Models.ModelContextEntities>
+﻿@model IEnumerable<MusicStore.Models.DataContentsModel>
 
 @{
     ViewBag.Title = "Home";
 }
 
-<div class="jumbotron">
-    <h1>Songs for all mood</h1>
-   
+
+<div class="row" >
+    <div class="col-md-12 abc" >
+        <h1 >Gala</h1>
+        <h5><i>Songs for all moods!!!</i></h5>
+
+    </div>
 </div>
 
 @foreach (var dataset in Model)
 {
   
-       <div class="card">
-            <div class="card-block well">
-                <div class="row">
-                    <div class="col-md-6">
-                        Song:<b> @Html.DisplayFor(modelItem => dataset.Title)</b>
-                    </div>
+       <div class="card" id="songcard">
+            <div class="row card-block well">
+                <div class="col-md-3">
+                    <img src="@dataset.ImageUrl" />
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        Artist: <b>@Html.DisplayFor(modelItem => dataset.Artist)</b>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Song:<b> @Html.DisplayFor(modelItem => dataset.Title)</b>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        Duration:<b> @Html.DisplayFor(modelItem => dataset.Duration)</b>
+                    <div class="row">
+                        <div class="col-md-6">
+                            Artist: <b>@Html.DisplayFor(modelItem => dataset.Artist)</b>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        Price:<b> @Html.DisplayFor(modelItem => dataset.Price)</b>
+                    <div class="row">
+                        <div class="col-md-6">
+                            Duration:<b> @Html.DisplayFor(modelItem => dataset.Duration)</b>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            Price:<b> @Html.DisplayFor(modelItem => dataset.Price)</b>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            Genre:<b> @Html.DisplayFor(modelItem => dataset.Genre)</b>
+                        </div>
                     </div>
                 </div>
             </div>

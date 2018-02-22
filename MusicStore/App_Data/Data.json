@@ -1,49 +1,45 @@
 ﻿[
   {
     "artist": "Fresh Moods",
-    "duration": "377.02485",
-    "Genres": "Jazz",
-    "AlbumId": "35",
-    "ImageUrl": "https://musicimage.xboxlive.com/content/music.B13EB907-0100-11DB-89CA-0019B92A3933/image?locale=en-US",
+    "duration": "03.40 min",
+    "Genre": "Jazz",
+    "Id": "35",
+    "ImageUrl": "../Content/Images/aground.jpeg",
     "Price": "$25",
-    "title": "Aground",
-    "GenreId": "17",
-    "ArtistId": "24"
+    "title": "Aground"
+    
   },
   {
     "artist": "Linkin Park",
-    "duration": "377.02485",
-    "Genres": "Pop",
-    "AlbumId": "42",
-    "ImageUrl": "https://musicimage.xboxlive.com/content/music.B13EB907-0100-11DB-89CA-0019B92A3933/image?locale=en-US",
+    "duration": "03.40 min",
+    "Genre": "Pop",
+    "Id": "42",
+    "ImageUrl": "../Content/Images/LinkinPark.jpeg",
     "Price": "$25",
-    "title": "In the end",
-    "GenreId": "10",
-    "ArtistId": "22"
+    "title": "In the end"
+   
 
   },
   {
     "artist": "Blue",
-    "duration": "377.02485",
-    "Genres": "Rock",
-    "AlbumId": "28",
-    "ImageUrl": "../Content/BlueOneLove.jpg",
+    "duration": "03.40 min",
+    "Genre": "Rock",
+    "Id": "28",
+    "ImageUrl": "../Content/Images/BlueOneLove.jpg",
    "Price": "$25",
-    "title": "One Love",
-    "GenreId": "5",
-    "ArtistId": "9"
+    "title": "One Love"
+    
 
   },
   { 
     "artist": "Asha Bhosle",
-    "duration": "377.02485",
-    "Genres": "Indian",
-    "AlbumId": "12",
-    "ImageUrl": "https://musicimage.xboxlive.com/content/music.B13EB907-0100-11DB-89CA-0019B92A3933/image?locale=en-US",
+    "duration": "03.40 min",
+    "Genre": "Indian",
+    "Id": "12",
+    "ImageUrl": "../Content/Images/dumMaroDum.jpeg",
     "Price": "$25",
-    "title": "Dum Maro dum",
-    "GenreId": "1",
-    "ArtistId": "2"
+    "title": "Dum Maro dum"
+   
 
   }
 ]
