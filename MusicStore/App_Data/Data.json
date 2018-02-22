@@ -31,7 +31,7 @@
     
 
   },
-  { 
+  {
     "artist": "Asha Bhosle",
     "duration": "03.40 min",
     "Genre": "Indian",
@@ -39,7 +39,50 @@
     "ImageUrl": "../Content/Images/dumMaroDum.jpeg",
     "Price": "$25",
     "title": "Dum Maro dum"
+
+
+  },
+{
+    "artist": "Fresh Moods",
+    "duration": "03.40 min",
+    "Genre": "Jazz",
+    "Id": "1",
+    "ImageUrl": "../Content/Images/aground.jpeg",
+    "Price": "$25",
+    "title": "win hearts"
+    
+  },
+  {
+    "artist": "Linkin Park",
+    "duration": "03.40 min",
+    "Genre": "Pop",
+    "Id": "4",
+    "ImageUrl": "../Content/Images/LinkinPark.jpeg",
+    "Price": "$25",
+    "title": "far in the deep"
    
+
+  },
+  {
+    "artist": "Blue",
+    "duration": "03.40 min",
+    "Genre": "Rock",
+    "Id": "8",
+    "ImageUrl": "../Content/Images/BlueOneLove.jpg",
+   "Price": "$25",
+    "title": "I hate love story"
+    
+
+  },
+  {
+    "artist": "Asha Bhosle",
+    "duration": "03.40 min",
+    "Genre": "Indian",
+    "Id": "9",
+    "ImageUrl": "../Content/Images/dumMaroDum.jpeg",
+    "Price": "$25",
+    "title": "As long as you love me"
+
 
   }
 ]

@@ -8,7 +8,6 @@ namespace MusicStore.Models
     public class DataContentsModel
     {
         public int Id { get; set; }
-       
         public string Artist { get; set; }
         public string Title { get; set; }
         public string Price { get; set; }

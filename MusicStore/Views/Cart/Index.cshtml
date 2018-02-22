@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MusicStore.Models.DataContentsModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@foreach (var data in Model)
+{
+
+    <div class="card" id="songcard">
+        <div class="row card-block well">
+            <div class="col-md-2">
+                <img src="@data.ImageUrl" />
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        Song:<b> @Html.DisplayFor(modelItem => data.Title)</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        Artist: <b>@Html.DisplayFor(modelItem => data.Artist)</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        Duration:<b> @Html.DisplayFor(modelItem => data.Duration)</b>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        Genre:<b> @Html.DisplayFor(modelItem => data.Genre)</b>
+                    </div>
+                </div>
+                <div class="row price">
+                    <div class="col-md-6">
+                        Price:<b> @Html.DisplayFor(modelItem => data.Price)</b>
+                    </div>
+
+                </div>
+            </div>
+           
+        </div>
+    </div>
+}
