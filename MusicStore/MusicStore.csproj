@@ -232,6 +232,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\Data.json" />
+    <Content Include="App_Data\Cart.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\HomePage.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -281,6 +282,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\NoItemInCart.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

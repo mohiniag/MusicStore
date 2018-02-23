@@ -15,21 +15,33 @@ namespace MusicStore.Service
     public class DatabaseCallImpl : DatabaseCalls
     {
         public DatabaseCallImpl() { }
-        public List<DataContentsModel> getAllData()
+        public List<DataContentsModel> getAllData(string Url)
         {
 
-           // using (StreamReader r = new StreamReader("~/App_Data/Data.json"))
-           // {
-            //    var json = r.ReadToEnd();
-           //     var songlist = JsonConvert.DeserializeObject<List<ModelContextEntities>>(json);
-              //  return songlist;
-          //  }
-              string file = HttpContext.Current.Server.MapPath("~/App_Data/Data.json");
+          
+              string file = HttpContext.Current.Server.MapPath(Url);
             //deserialize JSON from file  
             string data = File.ReadAllText(file);
            JavaScriptSerializer ser = new JavaScriptSerializer();
            var songlist = JsonConvert.DeserializeObject < List<DataContentsModel>>(data);
             return songlist;
         }
+
+
+        public string writeData(DataContentsModel dataset)
+        {
+
+            var jsonList = getAllData("~/App_Data/Cart.json");
+            jsonList.Add(dataset);
+           
+            string json = JsonConvert.SerializeObject(jsonList);
+
+            //write string to file
+            System.IO.File.WriteAllText(HttpContext.Current.Server.MapPath("~/App_Data/Cart.json"), json);
+
+            return "successful";
+        }
+
+
     }
 }

@@ -5,7 +5,7 @@
     "Genre": "Jazz",
     "Id": "35",
     "ImageUrl": "../Content/Images/aground.jpeg",
-    "Price": "$25",
+    "Price": "25",
     "title": "Aground"
     
   },
@@ -15,7 +15,7 @@
     "Genre": "Pop",
     "Id": "42",
     "ImageUrl": "../Content/Images/LinkinPark.jpeg",
-    "Price": "$25",
+    "Price": "25",
     "title": "In the end"
    
 
@@ -26,7 +26,7 @@
     "Genre": "Rock",
     "Id": "28",
     "ImageUrl": "../Content/Images/BlueOneLove.jpg",
-   "Price": "$25",
+   "Price": "25",
     "title": "One Love"
     
 
@@ -37,7 +37,7 @@
     "Genre": "Indian",
     "Id": "12",
     "ImageUrl": "../Content/Images/dumMaroDum.jpeg",
-    "Price": "$25",
+    "Price": "25",
     "title": "Dum Maro dum"
 
 
@@ -48,7 +48,7 @@
     "Genre": "Jazz",
     "Id": "1",
     "ImageUrl": "../Content/Images/aground.jpeg",
-    "Price": "$25",
+    "Price": "25",
     "title": "win hearts"
     
   },
@@ -58,7 +58,7 @@
     "Genre": "Pop",
     "Id": "4",
     "ImageUrl": "../Content/Images/LinkinPark.jpeg",
-    "Price": "$25",
+    "Price": "25",
     "title": "far in the deep"
    
 
@@ -69,7 +69,7 @@
     "Genre": "Rock",
     "Id": "8",
     "ImageUrl": "../Content/Images/BlueOneLove.jpg",
-   "Price": "$25",
+   "Price": "25",
     "title": "I hate love story"
     
 
@@ -80,7 +80,7 @@
     "Genre": "Indian",
     "Id": "9",
     "ImageUrl": "../Content/Images/dumMaroDum.jpeg",
-    "Price": "$25",
+    "Price": "23",
     "title": "As long as you love me"
 
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicStore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace MusicStore.Interfaces
 {
     interface DatabaseCalls
     {
-        List<Models.DataContentsModel> getAllData();
+        List<DataContentsModel> getAllData(string url);
+        string writeData(DataContentsModel dataset);
     }
 }

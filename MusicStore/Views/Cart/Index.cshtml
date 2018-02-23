@@ -1,13 +1,19 @@
 ﻿@model IEnumerable<MusicStore.Models.DataContentsModel>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cart";
+    decimal price = 0;
 }
 
-<h2>Index</h2>
+<div class="row">
+    <div class="col-md-12 pageheading">
+        <h1>Items in cart</h1>
+      </div>
+</div>
+
 @foreach (var data in Model)
 {
 
-    <div class="card" id="songcard">
+    <div class="card" >
         <div class="row card-block well">
             <div class="col-md-2">
                 <img src="@data.ImageUrl" />
@@ -36,7 +42,8 @@
                 </div>
                 <div class="row price">
                     <div class="col-md-6">
-                        Price:<b> @Html.DisplayFor(modelItem => data.Price)</b>
+                        Price:<b>$ @Html.DisplayFor(modelItem => data.Price)</b>
+                         @{ price = price + data.Price;}
                     </div>
 
                 </div>
@@ -45,3 +52,5 @@
         </div>
     </div>
 }
+<hr/>
+<h3>Total:@price</h3>
