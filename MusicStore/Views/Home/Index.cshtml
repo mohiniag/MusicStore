@@ -51,8 +51,9 @@
                 </div>
             </div>
             <div class="col-md-offset-2  col-md-2 addtocart">
-                <button type="button"  onclick='addToCart(@Html.Raw(Json.Encode(dataset)))' class="btn btn-primary">
+                <button type="button"  onclick='addToCart(@Html.Raw(Json.Encode(dataset)));this.disabled=true; ' class="btn btn-primary"  >
                     Add to Cart
+                   
                 </button>
                    
             </div>

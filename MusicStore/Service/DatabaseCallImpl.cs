@@ -1,14 +1,10 @@
 ﻿using MusicStore.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using MusicStore.Models;
 using System.Web.Script.Serialization; // for serialize and deserialize  
 using System.IO; // for File operation 
 using Newtonsoft.Json;
-using System.Web.Helpers;
-using Newtonsoft.Json.Linq;
 
 namespace MusicStore.Service
 {

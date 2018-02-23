@@ -1,10 +1,7 @@
 ﻿using MusicStore.Interfaces;
 using MusicStore.Models;
 using MusicStore.Service;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MusicStore.Controllers
