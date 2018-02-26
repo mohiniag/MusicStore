@@ -12,7 +12,7 @@ namespace MusicStore.Controllers
         {
             DatabaseCalls dbinterface = new DatabaseCallImpl();
            // DatabaseCallImpl dbc = new DatabaseCallImpl(); 
-            List<DataContentsModel> data =dbinterface.getAllData("~/App_Data/Data.json");
+            List<DataContentsModel> data =dbinterface.GetAllData("~/App_Data/Data.json");
             return View(data);
            
         }

@@ -5,7 +5,7 @@ function addToCart(dataset) {
     
     $.ajax({
        
-        url: 'Cart/Index',
+        url: '/Cart/Index',
         type:'POST',
         data: dataset
     }).done(function () {

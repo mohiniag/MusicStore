@@ -16,7 +16,7 @@
 @foreach (var dataset in Model)
 {
 
-    <div class="card" id="songcard">
+    <div class="card" >
         <div class="row card-block well">
             <div class="col-md-2">
                 <img src="@dataset.ImageUrl" />
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="col-md-offset-2  col-md-2 addtocart">
-                <button type="button"  onclick='addToCart(@Html.Raw(Json.Encode(dataset)));this.disabled=true; ' class="btn btn-primary"  >
+                <button type="button"  onclick='addToCart(@Html.Raw(Json.Encode(dataset)))' class="btn btn-primary"  >
                     Add to Cart
                    
                 </button>

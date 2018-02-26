@@ -9,5 +9,10 @@ namespace MusicStore.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Index(string amount)
+        {
+            return View();
+        }
     }
 }

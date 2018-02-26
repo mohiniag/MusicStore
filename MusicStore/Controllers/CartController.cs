@@ -15,7 +15,7 @@ namespace MusicStore.Controllers
         {
             DatabaseCalls dbc = new DatabaseCallImpl();
 
-            List<DataContentsModel> listofselecteddata = dbc.getAllData("~/App_Data/Cart.json");
+            List<DataContentsModel> listofselecteddata = dbc.GetAllData("~/App_Data/Cart.json");
 
             if (!listofselecteddata.Any())
 
@@ -26,13 +26,18 @@ namespace MusicStore.Controllers
         }
 
         [HttpPost]
-        public string Index(DataContentsModel dataset)
+        public void Index(DataContentsModel dataset)
         {
-            //Console.Write(dataset);
-           // listofselecteddata.Add(dataset);
             DatabaseCalls dbc = new DatabaseCallImpl();
-            string response = dbc.writeData(dataset);
-            return "successfull";
+            string response = dbc.AddToCart(dataset);
+            
+        }
+        [HttpPost]
+        public void RemoveItem(int ID)
+        {
+            System.Console.Write(ID);
+            DatabaseCalls dbc = new DatabaseCallImpl();
+            string response=dbc.RemoveFromCart(ID);
         }
 
     }

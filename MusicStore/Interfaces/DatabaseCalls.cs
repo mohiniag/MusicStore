@@ -5,7 +5,10 @@ namespace MusicStore.Interfaces
 {
     interface DatabaseCalls
     {
-        List<DataContentsModel> getAllData(string url);
-        string writeData(DataContentsModel dataset);
+        List<DataContentsModel> GetAllData(string url);
+       
+        string RemoveFromCart(int Id);
+
+        string AddToCart(DataContentsModel dataset);
     }
 }
