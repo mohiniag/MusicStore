@@ -12,12 +12,6 @@
 }
 function payment(amount) {
    
-    $.ajax({
-        url: '/MakePayment/Index',
-        type: 'POST',
-        data: {'amount':amount}
-    }).done(function () {
-        alert("successfull");
-        });
-
+    location.href = '/MakePayment/Index/'+amount;
+  
 }
