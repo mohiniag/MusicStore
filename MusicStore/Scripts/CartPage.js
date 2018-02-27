@@ -13,5 +13,6 @@
 function payment(amount) {
    
     location.href = '/MakePayment/Index/'+amount;
+    
   
 }

@@ -54,3 +54,5 @@ C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.
 C:\Projects\MusicStore\MusicStore.Tests\obj\Debug\MusicStore.Tests.csprojResolveAssemblyReference.cache
 C:\Projects\MusicStore\MusicStore.Tests\obj\Debug\MusicStore.Tests.dll
 C:\Projects\MusicStore\MusicStore.Tests\obj\Debug\MusicStore.Tests.pdb
+C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\MusicStore.Core.dll
+C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\MusicStore.Core.pdb

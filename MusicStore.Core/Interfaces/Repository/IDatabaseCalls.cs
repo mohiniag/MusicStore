@@ -1,9 +1,9 @@
-﻿using MusicStore.Models;
+﻿using MusicStore.Core.Models;
 using System.Collections.Generic;
 
-namespace MusicStore.Interfaces
+namespace MusicStore.Core.Interfaces.Repository
 {
-    interface DatabaseCalls
+    public interface IDatabaseCalls
     {
         List<DataContentsModel> GetAllData(string url);
        

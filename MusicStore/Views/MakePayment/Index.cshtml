@@ -1,1 +1,151 @@
-﻿inside payment view
+﻿@model MusicStore.Core.Models.CustomerDetails
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<style>
+    .field-validation-error {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+
+@using (Html.BeginForm())
+
+{
+    <div class="col-md-12">
+
+        @Html.ValidationSummary(true, "Please check Error details")
+    </div>
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-offset-3 col-md-5 well well-lg" id="creditcardform">
+
+                <form action="/Booking/Index" method="post">
+                    <div class="row formHeading">
+                        <div class="col-md-offset-3 col-md-8">
+                            <h2>Enter Details</h2>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row form-group">
+
+                        <div class="col-md-offset-2 col-md-2 input-group">
+
+                            <div class="input-group-addon">
+                                <i class="fa fa-transgender-alt"></i>
+                            </div>
+
+                            @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder = "Title", required = "required" })
+                        </div>
+                    </div>
+                    <div class="row form-group ">
+                        <div class="col-md-offset-2 col-md-6 input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                            @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder = "Firstname", required = "required" })
+                            @Html.ValidationMessageFor(model => model.FirstName)
+                        </div>
+                    </div>
+                  
+                    <div class="row form-group ">
+                        <div class="col-md-offset-2 col-md-6 input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div>
+                            @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", placeholder = "Lastname", required = "required" })
+                            @Html.ValidationMessageFor(model => model.LastName)
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-offset-2 col-md-6 input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </div>
+                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control", placeholder = "Email Id", required = "required" })
+                            @Html.ValidationMessageFor(model => model.EmailId)
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-offset-2 col-md-6 input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-phone"></span>
+                            </div>
+
+                            @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control", placeholder = "Phone Number", required = "required" })
+                            @Html.ValidationMessageFor(model => model.PhoneNo)
+
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-offset-2 col-md-6 input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-address-card"></i>
+                            </div>
+
+                            @Html.TextBoxFor(model => model.CardNo, new { @class = "form-control", placeholder = "Card Number", required = "required" })
+                            @Html.ValidationMessageFor(model => model.CardNo)
+                        </div>
+                    </div>
+
+
+                    <div class="row form-group">
+                        <div class="col-md-offset-2 col-md-6 input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-credit-card"></span>
+                            </div>
+
+                            @Html.TextBoxFor(model => model.CardCCVNo, new { @class = "form-control", placeholder = "CVV", required = "required" })
+                            @Html.ValidationMessageFor(model => model.CardNo)
+                        </div>
+                    </div>
+
+
+                   
+
+                    <div class="row form-group">
+                        <div class="col-md-offset-2 col-md-6 input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-inr"></i>
+                            </div>
+
+                            @Html.TextBoxFor(model => model.payableAmount, new { @class = "form-control", @readonly = "readonly" })
+                        @Html.DisplayFor(model => model.payableAmount)
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-offset-2 col-md-4 input-group" id="credit_cards">
+                            <div class="input-group-addon">
+                                <i class="fa fa-cc-visa"></i>/<i class="fa fa-cc-mastercard"></i>
+                            </div>
+                            <select class="form-control">
+                                <option value="mastercard">Master Card</option>
+                                <option value="visa">Visa </option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="form-group col-md-offset-4" id="pay-now">
+                            <button type="submit" class="btn btn-primary" id="confirm">Submit</button>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+}
+
+

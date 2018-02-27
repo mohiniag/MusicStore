@@ -1,4 +1,4 @@
-﻿namespace MusicStore.Models
+﻿namespace MusicStore.Core.Models
 {
     public class DataContentsModel
     {

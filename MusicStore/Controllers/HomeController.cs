@@ -1,6 +1,6 @@
-﻿using MusicStore.Interfaces;
-using MusicStore.Models;
-using MusicStore.Service;
+﻿using MusicStore.Core.Interfaces.Repository;
+using MusicStore.Core.Models;
+using MusicStore.Infrastructure.Repository;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -10,7 +10,7 @@ namespace MusicStore.Controllers
     {
         public ActionResult Index()
         {
-            DatabaseCalls dbinterface = new DatabaseCallImpl();
+            IDatabaseCalls dbinterface = new DatabaseCallImpl();
            // DatabaseCallImpl dbc = new DatabaseCallImpl(); 
             List<DataContentsModel> data =dbinterface.GetAllData("~/App_Data/Data.json");
             return View(data);

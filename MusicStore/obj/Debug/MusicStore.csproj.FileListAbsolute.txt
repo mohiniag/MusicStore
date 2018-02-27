@@ -162,3 +162,11 @@ C:\Projects\MusicStore\MusicStore\bin\Microsoft.Owin.Security.MicrosoftAccount.x
 C:\Projects\MusicStore\MusicStore\obj\Debug\MusicStore.csprojResolveAssemblyReference.cache
 C:\Projects\MusicStore\MusicStore\obj\Debug\MusicStore.dll
 C:\Projects\MusicStore\MusicStore\obj\Debug\MusicStore.pdb
+C:\Projects\MusicStore\MusicStore\bin\MusicStore.Core.dll
+C:\Projects\MusicStore\MusicStore\bin\MusicStore.Infrastructure.dll
+C:\Projects\MusicStore\MusicStore\bin\MusicStore.Core.pdb
+C:\Projects\MusicStore\MusicStore\bin\MusicStore.Infrastructure.pdb
+C:\Projects\MusicStore\MusicStore\bin\MusicStore.Data.dll
+C:\Projects\MusicStore\MusicStore\bin\MusicStore.Data.pdb
+C:\Projects\MusicStore\MusicStore\bin\JsonData\Cart.json
+C:\Projects\MusicStore\MusicStore\bin\App_Data\Cart.json

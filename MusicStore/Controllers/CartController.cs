@@ -1,9 +1,9 @@
-﻿using MusicStore.Models;
+﻿using MusicStore.Core.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using MusicStore.Service;
-using MusicStore.Interfaces;
+using MusicStore.Infrastructure.Repository;
+using MusicStore.Core.Interfaces.Repository;
 
 namespace MusicStore.Controllers
 {
@@ -13,7 +13,7 @@ namespace MusicStore.Controllers
         // GET: Cart
         public ActionResult Index()
         {
-            DatabaseCalls dbc = new DatabaseCallImpl();
+            IDatabaseCalls dbc = new DatabaseCallImpl();
 
             List<DataContentsModel> listofselecteddata = dbc.GetAllData("~/App_Data/Cart.json");
 
@@ -28,7 +28,7 @@ namespace MusicStore.Controllers
         [HttpPost]
         public void Index(DataContentsModel dataset)
         {
-            DatabaseCalls dbc = new DatabaseCallImpl();
+            IDatabaseCalls dbc = new DatabaseCallImpl();
             string response = dbc.AddToCart(dataset);
             
         }
@@ -36,8 +36,12 @@ namespace MusicStore.Controllers
         public void RemoveItem(int ID)
         {
             System.Console.Write(ID);
-            DatabaseCalls dbc = new DatabaseCallImpl();
+            IDatabaseCalls dbc = new DatabaseCallImpl();
             string response=dbc.RemoveFromCart(ID);
+        }
+        public ActionResult Payment(decimal amount)
+        {
+            return RedirectToRoute("payment", amount);
         }
 
     }

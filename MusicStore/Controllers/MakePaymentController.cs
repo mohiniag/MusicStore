@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using MusicStore.Core.Models;
+using System.Web.Mvc;
 
 namespace MusicStore.Controllers
 {
@@ -9,10 +10,12 @@ namespace MusicStore.Controllers
         {
             return View();
         }
-        [HttpPost]
+        [HttpGet, Route("pay/{amount}")]
         public ActionResult Index(string amount)
         {
-            return View();
+            CustomerDetails customer = new CustomerDetails();
+            customer.payableAmount = amount;
+            return View(customer);
         }
     }
 }

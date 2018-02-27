@@ -1,21 +1,25 @@
-﻿using MusicStore.Interfaces;
+﻿
 using System.Collections.Generic;
 using System.Web;
-using MusicStore.Models;
+using MusicStore.Core.Models;
 using System.Web.Script.Serialization; // for serialize and deserialize  
 using System.IO; // for File operation 
 using Newtonsoft.Json;
-using System;
+using MusicStore.Data;
 using System.Linq;
+using MusicStore.Core.Interfaces.Repository;
+using System.Reflection;
 
-namespace MusicStore.Service
+namespace MusicStore.Infrastructure.Repository
 {
-    public class DatabaseCallImpl : DatabaseCalls
+    public class DatabaseCallImpl : IDatabaseCalls
     {
         public DatabaseCallImpl() { }
 
         public string AddToCart(DataContentsModel dataset)
         {
+           
+          
             var jsonList = GetAllData("~/App_Data/Cart.json");
             jsonList.Add(dataset);
            string response= WriteData(jsonList, "~/App_Data/Cart.json");
