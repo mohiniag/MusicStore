@@ -301,6 +301,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MusicStore.Business\MusicStore.Business.csproj">
+      <Project>{8e9c64d7-a70a-4c0c-a0f3-7d4c8c173798}</Project>
+      <Name>MusicStore.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MusicStore.Core\MusicStore.Core.csproj">
       <Project>{573b9d82-c475-44e3-9672-53c9bd9bc726}</Project>
       <Name>MusicStore.Core</Name>

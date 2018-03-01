@@ -29,15 +29,17 @@ namespace MusicStore.Core.Models
         public string customerIp { get; set; }
 
         [Required]
-        [RegularExpression("[^0-9]", ErrorMessage = "Card Number must be 16 numeric numbers.")]
+        [RegularExpression("[0-9]{16}", ErrorMessage = "Card Number must be 16 numeric numbers.")]
         public string CardNo { get; set; }
         [Required]
-        [RegularExpression("[^0-9]", ErrorMessage = "CCV must be 3 numeric numbers.")]
+        [RegularExpression("[0-9]{3}", ErrorMessage = "CCV must be 3 numeric numbers.")]
         public string CardCCVNo { get; set; }
-        public List<SelectListItem> CardExpiryMonth { get; set; }
-        public List<SelectListItem> CardExpiryYear { get; set; }
-        public string SelectedCardExpiryMonth { get; set; }
-        public string SelectedCardExpiryYear { get; set; }
+        [Required]
+        public string CardExpiryMonth { get; set; }
+        [Required]
+        [RegularExpression("(20)[1-9][0-9]", ErrorMessage = "Not a valid year")]
+        public string CardExpiryYear { get; set; }
+      
 
     }
 }

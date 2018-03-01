@@ -1,0 +1,7 @@
+C:\Projects\MusicStore\MusicStore.Business\bin\Debug\MusicStore.Business.dll
+C:\Projects\MusicStore\MusicStore.Business\bin\Debug\MusicStore.Business.pdb
+C:\Projects\MusicStore\MusicStore.Business\bin\Debug\MusicStore.Core.dll
+C:\Projects\MusicStore\MusicStore.Business\bin\Debug\MusicStore.Core.pdb
+C:\Projects\MusicStore\MusicStore.Business\obj\Debug\MusicStore.Business.csprojResolveAssemblyReference.cache
+C:\Projects\MusicStore\MusicStore.Business\obj\Debug\MusicStore.Business.dll
+C:\Projects\MusicStore\MusicStore.Business\obj\Debug\MusicStore.Business.pdb

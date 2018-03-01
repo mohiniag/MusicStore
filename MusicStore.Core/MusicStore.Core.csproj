@@ -46,13 +46,13 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Interfaces\Repository\IDatabaseCalls.cs" />
+    <Compile Include="Interfaces\Repository\IPaymentGateway.cs" />
     <Compile Include="Models\CustomerDetails.cs" />
     <Compile Include="Models\DataContentsModel.cs" />
+    <Compile Include="Models\PaymentResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\Service\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -9,4 +9,3 @@ C:\Projects\MusicStore\MusicStore.Infrastructure\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\MusicStore\MusicStore.Infrastructure\bin\Debug\MusicStore.Core.pdb
 C:\Projects\MusicStore\MusicStore.Infrastructure\bin\Debug\MusicStore.Data.pdb
 C:\Projects\MusicStore\MusicStore.Infrastructure\bin\Debug\JsonData\Cart.json
-C:\Projects\MusicStore\MusicStore.Infrastructure\bin\Debug\System.Web.Mvc.dll

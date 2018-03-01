@@ -41,7 +41,7 @@ namespace MusicStore.Controllers
         }
         public ActionResult Payment(decimal amount)
         {
-            return RedirectToRoute("payment", amount);
+            return RedirectToRoute("payment", new { amount = amount});
         }
 
     }

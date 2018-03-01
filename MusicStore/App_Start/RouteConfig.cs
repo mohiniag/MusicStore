@@ -12,9 +12,10 @@ namespace MusicStore
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapMvcAttributeRoutes();
             routes.MapRoute(
                 name: "payment",
-                url: "pay/{amount}",
+                url: "pay/{amount}/",
                 defaults: new { controller = "MakePayment", action = "Index", amount = UrlParameter.Optional }
             );
             routes.MapRoute(
