@@ -4,6 +4,6 @@ namespace MusicStore.Core.Interfaces.Repository
 {
    public interface IPaymentGateway
     {
-        string FetchedCustomerDetails(CustomerDetails customerDetails);
+        void FetchedCustomerDetails(CustomerDetails customerDetails);
     }
 }

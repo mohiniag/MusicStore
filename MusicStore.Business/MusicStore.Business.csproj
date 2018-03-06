@@ -41,14 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogic\PaymentGateway.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="PaymentGateway.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MusicStore.Core\MusicStore.Core.csproj">
       <Project>{573b9d82-c475-44e3-9672-53c9bd9bc726}</Project>
       <Name>MusicStore.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Payment\Payment.csproj">
+      <Project>{b08db79a-881a-4ff6-b9ef-5e9b9b9d6d1b}</Project>
+      <Name>Payment</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

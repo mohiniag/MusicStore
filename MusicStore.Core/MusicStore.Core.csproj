@@ -46,10 +46,10 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Interfaces\Repository\IDatabaseCalls.cs" />
+    <Compile Include="Interfaces\Repository\IPaymentClient.cs" />
     <Compile Include="Interfaces\Repository\IPaymentGateway.cs" />
     <Compile Include="Models\CustomerDetails.cs" />
     <Compile Include="Models\DataContentsModel.cs" />
-    <Compile Include="Models\PaymentResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

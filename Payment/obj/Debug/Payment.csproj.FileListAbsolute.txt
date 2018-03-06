@@ -1,0 +1,8 @@
+C:\Projects\MusicStore\Payment\obj\Debug\Payment.csprojResolveAssemblyReference.cache
+C:\Projects\MusicStore\Payment\bin\Debug\Payment.dll
+C:\Projects\MusicStore\Payment\bin\Debug\Payment.pdb
+C:\Projects\MusicStore\Payment\bin\Debug\MusicStore.Core.dll
+C:\Projects\MusicStore\Payment\bin\Debug\System.Web.Mvc.dll
+C:\Projects\MusicStore\Payment\bin\Debug\MusicStore.Core.pdb
+C:\Projects\MusicStore\Payment\obj\Debug\Payment.dll
+C:\Projects\MusicStore\Payment\obj\Debug\Payment.pdb

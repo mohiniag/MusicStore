@@ -1,7 +1,8 @@
 ﻿using MusicStore.Core.Models;
 using System.Web.Mvc;
-using MusicStore.Business.BusinessLogic;
+using MusicStore.Business;
 using System;
+using MusicStore.Core.Interfaces.Repository;
 
 namespace MusicStore.Controllers
 {
@@ -9,8 +10,8 @@ namespace MusicStore.Controllers
     {
         // GET: MakePayment
 
-       [Route("pay/{amount:decimal}/")]
-        public ActionResult Index(decimal amount)
+       [Route("MakePayment/{pay}/{amount}")]
+        public ActionResult pay(decimal amount)
         {
            
             return View();
@@ -18,16 +19,18 @@ namespace MusicStore.Controllers
 
         public ActionResult Index(CustomerDetails model)
         {
-            PaymentGateway paymentGateway = new PaymentGateway();
+            IPaymentGateway paymentGateway = new PaymentGateway();
             try
             {
                 if (ModelState.IsValid)
                 {
-                    model.Id = 1;
+         
                     model.CardFee = 100;
                     model.customerIp = "172.10.114";
+                    //to be removed
+                    model.payableAmount = "55.5";
                     // call business layer 
-                    var objData = paymentGateway.FetchedCustomerDetails(model);
+                    paymentGateway.FetchedCustomerDetails(model);
                 }
                 else
                 {
@@ -42,6 +45,15 @@ namespace MusicStore.Controllers
             return View("confirmation", model);
         }
 
+      
+
+       
+
+        
+
+               
+
+    
 
     }
 }
