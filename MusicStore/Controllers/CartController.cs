@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 using MusicStore.Infrastructure.Repository;
 using MusicStore.Core.Interfaces.Repository;
+using System;
 
 namespace MusicStore.Controllers
 {
@@ -14,15 +15,20 @@ namespace MusicStore.Controllers
         public ActionResult Index()
         {
             IDatabaseCalls dbc = new DatabaseCallImpl();
+            try
+            {
+                List<DataContentsModel> listofselecteddata = dbc.GetAllData("~/App_Data/Cart.json");
 
-            List<DataContentsModel> listofselecteddata = dbc.GetAllData("~/App_Data/Cart.json");
+                if (!listofselecteddata.Any())
 
-            if (!listofselecteddata.Any())
+                    return View("NoItemInCart");
+                else
 
-                return View("NoItemInCart");
-            else
-
-                return View(listofselecteddata);
+                    return View(listofselecteddata);
+            }catch(Exception ex)
+            {
+                return View("Error");
+            }
         }
 
         [HttpPost]
@@ -41,7 +47,7 @@ namespace MusicStore.Controllers
         }
         public ActionResult Payment(decimal amount)
         {
-            return RedirectToAction("pay", "MakePayment", new { amount = amount});
+            return RedirectToRoute("payment", new { amount = amount});
         }
 
     }

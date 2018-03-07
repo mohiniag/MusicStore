@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.IO;
 using System.Collections;
-using System.Web.Mvc;
-using MusicStore.Core.Interfaces;
 using System.Web;
+using MusicStore.Core.Interfaces.Repository;
 
-namespace Payment
+namespace Payment.PaymentClient
 {
-    public class PaymentClient: Repository.IPaymentClient
+    public class PaymentClient: IPaymentClient
     {
 
-        public void MakePayment(string strNVP, string strNVPSandboxServer)
+        public string MakePayment(string strNVP, string strNVPSandboxServer)
         {
             try
             {
@@ -62,6 +57,7 @@ namespace Payment
 
                     string strSuccess = "Thank you, your order for: $" +
                         strAmt + " " + strCcy + " has been processed.";
+                    return strSuccess;
                 }
 
 
@@ -69,12 +65,14 @@ namespace Payment
                 {
 
                     string error = "Error code: " + htResponse["L_ERRORCODE0"].ToString();
+                    return error;
 
                 }
             }
             catch (Exception ex)
             {
                 string error = ex.Message;
+                return error;
             }
 
 

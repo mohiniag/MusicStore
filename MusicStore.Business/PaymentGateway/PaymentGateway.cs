@@ -1,18 +1,13 @@
 ﻿using MusicStore.Core.Interfaces.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MusicStore.Core.Models;
 using System.Configuration;
-using Payment;
+using Payment.PaymentClient;
 
-namespace MusicStore.Business
+namespace MusicStore.Business.PaymentGateway
 {
    public class PaymentGateway : IPaymentGateway
     {
-        public void FetchedCustomerDetails(CustomerDetails customerDetails)
+        public string FetchedCustomerDetails(CustomerDetails customerDetails)
         {
 
             string strUsername = ConfigurationManager.AppSettings["InStoreAPIUsername"].ToString();
@@ -53,8 +48,9 @@ namespace MusicStore.Business
                            "&CURRENCYCODE=USD" +
                            "&DESC=Test Sale Tickets" +
                            "&INVNUM=" + "";
-            PaymentClient paymentClient = new PaymentClient();
-            paymentClient.MakePayment(strNVP, strNVPSandboxServer);
+            IPaymentClient paymentClient = new PaymentClient();
+            string response=paymentClient.MakePayment(strNVP, strNVPSandboxServer);
+            return response;
         }
     }
 }

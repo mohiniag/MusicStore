@@ -3,18 +3,18 @@
 @{
     ViewBag.Title = "Payment";
 
-   
+
+}
+@if (ViewBag.Data != null)
+{
+    
+    @ViewBag.Data
 }
 
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("pay", "MakePayment", FormMethod.Post))
 
 {
-    <div class="col-md-12">
-
-        @Html.ValidationSummary(true, "Please check Error details")
-    </div>
-
+  
     <div class="container">
         <div class="row ">
             <div class="col-md-offset-3 col-md-5 well well-lg" id="creditcardform">
@@ -25,7 +25,7 @@
                             <h2>Enter Details</h2>
                         </div>
                     </div>
-                    <hr/>
+                    <hr />
                     <div class="row form-group ">
                         <div class="col-md-offset-2 col-md-6 input-group">
                             <div class="input-group-addon">
@@ -44,8 +44,8 @@
                             @Html.ValidationMessageFor(model => model.LastName)
                         </div>
                     </div>
-                  
-                  
+
+
                     <div class="row form-group">
                         <div class="col-md-offset-2 col-md-6 input-group">
                             <div class="input-group-addon">
@@ -58,7 +58,7 @@
                     <div class="row form-group">
                         <div class="col-md-offset-2 col-md-6 input-group">
                             <div class="input-group-addon">
-                                <span class="glyphicon glyphicon-phone"></span>
+                                <span class="fa fa-map-marker"></span>
                             </div>
 
                             @Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Address", required = "required" })
@@ -69,7 +69,7 @@
                     <div class="row form-group">
                         <div class="col-md-offset-2 col-md-6 input-group">
                             <div class="input-group-addon">
-                                <span class="glyphicon glyphicon-phone"></span>
+                                <span class="fa fa-map-o"></span>
                             </div>
 
                             @Html.TextBoxFor(model => model.State, new { @class = "form-control", placeholder = "State", required = "required" })
@@ -108,7 +108,7 @@
                             </div>
 
                             @Html.TextBoxFor(model => model.CardCCVNo, new { @class = "form-control", placeholder = "CVV", required = "required" })
-                            @Html.ValidationMessageFor(model => model.CardNo)
+                            @Html.ValidationMessageFor(model => model.CardCCVNo)
                         </div>
                     </div>
 
@@ -120,7 +120,7 @@
                             </div>
 
                             @Html.TextBoxFor(model => model.CardExpiryMonth, new { @class = "form-control", placeholder = "Month", required = "required" })
-                           
+
                             @Html.TextBoxFor(model => model.CardExpiryYear, new { @class = "form-control", placeholder = "Year", required = "required" })
                             @Html.ValidationMessageFor(model => model.CardExpiryYear)
                         </div>
@@ -133,7 +133,7 @@
                             </div>
 
                             @Html.TextBoxFor(model => model.payableAmount, new { @class = "form-control", @readonly = "readonly" })
-                        @amount
+
                         </div>
                     </div>
 

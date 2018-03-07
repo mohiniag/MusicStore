@@ -287,9 +287,12 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Cart\NoItemInCart.cshtml" />
     <Content Include="Views\MakePayment\Index.cshtml" />
-    <Content Include="Views\MakePayment\Confirmation.cshtml" />
+    <Content Include="Views\MakePayment\PaymentResponse.cshtml" />
+    <Content Include="Views\Cart\Error.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Constants\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

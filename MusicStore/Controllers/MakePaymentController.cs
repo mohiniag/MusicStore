@@ -1,8 +1,8 @@
 ﻿using MusicStore.Core.Models;
 using System.Web.Mvc;
-using MusicStore.Business;
 using System;
 using MusicStore.Core.Interfaces.Repository;
+using MusicStore.Business.PaymentGateway;
 
 namespace MusicStore.Controllers
 {
@@ -10,50 +10,44 @@ namespace MusicStore.Controllers
     {
         // GET: MakePayment
 
-       [Route("MakePayment/{pay}/{amount}")]
-        public ActionResult pay(decimal amount)
+        [Route("pay/{amount:decimal}/creditcard")]
+        public ActionResult Index(decimal amount)
         {
-           
-            return View();
+            CustomerDetails customerDetails = new CustomerDetails();
+            customerDetails.payableAmount = amount.ToString();
+            return View(customerDetails);
         }
-
-        public ActionResult Index(CustomerDetails model)
+        [HttpPost]
+        public ActionResult pay(CustomerDetails model)
         {
             IPaymentGateway paymentGateway = new PaymentGateway();
-            try
-            {
-                if (ModelState.IsValid)
-                {
-         
-                    model.CardFee = 100;
-                    model.customerIp = "172.10.114";
-                    //to be removed
-                    model.payableAmount = "55.5";
-                    // call business layer 
-                    paymentGateway.FetchedCustomerDetails(model);
-                }
-                else
-                {
-                    return View("index");
-                }
-            }
-            catch (Exception ex)
-            {
-                return RedirectToAction("error");
-            }
 
-            return View("confirmation", model);
+            if (ModelState.IsValid)
+            {
+
+                model.CardFee = 100;
+                model.customerIp = "172.10.114";
+                string paymentconfirmation = paymentGateway.FetchedCustomerDetails(model);
+                ViewBag.Data = paymentconfirmation;
+                return View("index");
+            }
+            else
+            {
+                ViewBag.Data = "Enter Valid Details";
+                return View("index");
+            }
+            
         }
 
-      
 
-       
 
-        
 
-               
 
-    
+
+
+
+
+
 
     }
 }

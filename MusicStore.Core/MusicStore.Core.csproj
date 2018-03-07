@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Interfaces\Repository\IDatabaseCalls.cs" />
     <Compile Include="Interfaces\Repository\IPaymentClient.cs" />
     <Compile Include="Interfaces\Repository\IPaymentGateway.cs" />

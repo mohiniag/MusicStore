@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Payment.Repository
+﻿
+namespace MusicStore.Core.Interfaces.Repository
 {
    public interface IPaymentClient
     {
-        void MakePayment(string strNVP, string strNVPSandboxServer);
+        string MakePayment(string strNVP, string strNVPSandboxServer);
     }
 }
