@@ -8,8 +8,8 @@ function addToCart(dataset) {
         url: '/Cart/Index',
         type:'POST',
         data: dataset
-    }).done(function () {
-        alert('Added to cart');
+    }).done(function (response) {
+        alert(response);
     });
     
    

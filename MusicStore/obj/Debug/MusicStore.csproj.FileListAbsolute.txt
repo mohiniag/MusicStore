@@ -169,7 +169,6 @@ C:\Projects\MusicStore\MusicStore\bin\MusicStore.Infrastructure.pdb
 C:\Projects\MusicStore\MusicStore\bin\MusicStore.Data.dll
 C:\Projects\MusicStore\MusicStore\bin\MusicStore.Data.pdb
 C:\Projects\MusicStore\MusicStore\bin\JsonData\Cart.json
-C:\Projects\MusicStore\MusicStore\bin\App_Data\Cart.json
 C:\Projects\MusicStore\MusicStore\bin\MusicStore.Business.dll
 C:\Projects\MusicStore\MusicStore\bin\Payment.dll
 C:\Projects\MusicStore\MusicStore\bin\MusicStore.Business.pdb

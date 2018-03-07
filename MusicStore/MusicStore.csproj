@@ -232,9 +232,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\Data.json" />
-    <Content Include="App_Data\Cart.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CartPage.js" />
     <Content Include="Scripts\HomePage.js" />
@@ -287,12 +284,10 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Cart\NoItemInCart.cshtml" />
     <Content Include="Views\MakePayment\Index.cshtml" />
-    <Content Include="Views\MakePayment\PaymentResponse.cshtml" />
-    <Content Include="Views\Cart\Error.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Cart\ErrorLoading.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Constants\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

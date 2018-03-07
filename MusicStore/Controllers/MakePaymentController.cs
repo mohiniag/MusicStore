@@ -1,6 +1,5 @@
 ﻿using MusicStore.Core.Models;
 using System.Web.Mvc;
-using System;
 using MusicStore.Core.Interfaces.Repository;
 using MusicStore.Business.PaymentGateway;
 
@@ -27,7 +26,9 @@ namespace MusicStore.Controllers
 
                 model.CardFee = 100;
                 model.customerIp = "172.10.114";
+
                 string paymentconfirmation = paymentGateway.FetchedCustomerDetails(model);
+
                 ViewBag.Data = paymentconfirmation;
                 return View("index");
             }
@@ -38,16 +39,6 @@ namespace MusicStore.Controllers
             }
             
         }
-
-
-
-
-
-
-
-
-
-
 
     }
 }

@@ -1,14 +1,12 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web;
 using MusicStore.Core.Models;
 using System.Web.Script.Serialization; // for serialize and deserialize  
 using System.IO; // for File operation 
 using Newtonsoft.Json;
-using MusicStore.Data;
 using System.Linq;
 using MusicStore.Core.Interfaces.Repository;
-using System.Reflection;
+using System;
 
 namespace MusicStore.Infrastructure.Repository
 {
@@ -18,50 +16,76 @@ namespace MusicStore.Infrastructure.Repository
 
         public string AddToCart(DataContentsModel dataset)
         {
-           
-          
+
+
             var jsonList = GetAllData("~/App_Data/Cart.json");
+
+            if (jsonList == null)
+            {
+                return "Cannot add to cart";
+            }
+
             jsonList.Add(dataset);
-           string response= WriteData(jsonList, "~/App_Data/Cart.json");
-         
-            return response;
+
+            string response = WriteData(jsonList, "~/App_Data/Cart.json");
+
+            if (response == "Successfull")
+                return "Item added to cart";
+            else
+                return "Item cannot be added to the cart";
         }
 
         public string RemoveFromCart(int Id)
         {
-            System.Console.Write(Id);
+
             var jsonList = GetAllData("~/App_Data/Cart.json");
-            if (!jsonList.Any())
+            if (!jsonList.Any() || jsonList == null)
             {
-                return "cart is empty";
+                return "Cart is empty";
             }
-            DataContentsModel item = jsonList.First(x => x.Id== Id);
+            DataContentsModel item = jsonList.First(x => x.Id == Id);
             jsonList.Remove(item);
-            WriteData(jsonList, "~/App_Data/Cart.json");
-            return "successfull";
+            string response = WriteData(jsonList, "~/App_Data/Cart.json");
+            if (response == "Successfull")
+                return "Item removed from cart";
+            else
+                return "Item cannot be removed from cart";
         }
 
         public List<DataContentsModel> GetAllData(string Url)
         {
 
-
-            string file = HttpContext.Current.Server.MapPath(Url);
-            //deserialize JSON from file  
-            string data = File.ReadAllText(file);
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            var songlist = JsonConvert.DeserializeObject<List<DataContentsModel>>(data);
-            return songlist;
+            try
+            {
+                string file = HttpContext.Current.Server.MapPath(Url);
+                //deserialize JSON from file  
+                string data = File.ReadAllText(file);
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                var songlist = JsonConvert.DeserializeObject<List<DataContentsModel>>(data);
+                return songlist;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
-        private string WriteData(List<DataContentsModel> dataset,string url)
+        private string WriteData(List<DataContentsModel> dataset, string url)
         {
 
             string json = JsonConvert.SerializeObject(dataset);
 
             //write string to file
-            System.IO.File.WriteAllText(HttpContext.Current.Server.MapPath(url), json);
+            try
+            {
+                File.WriteAllText(HttpContext.Current.Server.MapPath(url), json);
+                return "Successfull";
+            }
+            catch (Exception ex)
+            {
+                return "Unsuccessfull";
+            }
 
-            return "SUCCESSFULL";
         }
 
 

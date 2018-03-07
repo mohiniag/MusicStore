@@ -4,15 +4,9 @@
         url: '/Cart/RemoveItem',
         type: 'POST',
         data: {'id':id}
-    }).done(function () {
+    }).done(function (response) {
         location.reload();
-        alert("item removed");
+        alert(response);
         });
 
-}
-function payment(amount) {
-   
-    location.href = '/MakePayment/Index/'+amount;
-    
-  
 }

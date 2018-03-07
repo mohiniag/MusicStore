@@ -1,20 +1,17 @@
-﻿using System.Web.Mvc;
-using System.Collections.Generic;
+﻿
 using System.ComponentModel.DataAnnotations;
 
 namespace MusicStore.Core.Models
 {
     public class CustomerDetails
     {
-   
-        [Required(ErrorMessage = "First Name is required")]
 
-        [StringLength(160)]
+        [Required]
+        [RegularExpression("[a-zA-Z]{2,20}", ErrorMessage = "Enter a valid name")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Last Name is required")]
-
-        [StringLength(160)]
+        [Required]
+        [RegularExpression("[a-zA-Z]{2,20}", ErrorMessage = "Enter a valid Last name")]
         public string LastName { get; set; }
         
         public string payableAmount { get; set; }
@@ -30,6 +27,7 @@ namespace MusicStore.Core.Models
         public string CardCCVNo { get; set; }
 
         [Required]
+        [RegularExpression("[a-zA-Z]{3}", ErrorMessage = "Not a valid month")]
         public string CardExpiryMonth { get; set; }
 
         [Required]
