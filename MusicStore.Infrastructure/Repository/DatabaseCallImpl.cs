@@ -16,40 +16,43 @@ namespace MusicStore.Infrastructure.Repository
 
         public string AddToCart(DataContentsModel dataset)
         {
-
-
-            var jsonList = GetAllData("~/App_Data/Cart.json");
+            var jsonList = GetAllData(Constants.Constants.cartUrl);
 
             if (jsonList == null)
             {
-                return "Cannot add to cart";
+                return Constants.Constants.cartDataNotAvailable;
             }
 
             jsonList.Add(dataset);
 
-            string response = WriteData(jsonList, "~/App_Data/Cart.json");
+            string response = WriteData(jsonList, Constants.Constants.cartUrl);
 
-            if (response == "Successfull")
-                return "Item added to cart";
+            if (response == Constants.Constants.successfull)
+
+                return Constants.Constants.addToCart;
             else
-                return "Item cannot be added to the cart";
+
+                return Constants.Constants.notAddedToCart;
         }
 
         public string RemoveFromCart(int Id)
         {
 
-            var jsonList = GetAllData("~/App_Data/Cart.json");
-            if (!jsonList.Any() || jsonList == null)
+            var jsonList = GetAllData(Constants.Constants.cartUrl);
+            if (jsonList == null || !jsonList.Any())
             {
-                return "Cart is empty";
+                return Constants.Constants.emptyCart;
             }
             DataContentsModel item = jsonList.First(x => x.Id == Id);
+
             jsonList.Remove(item);
-            string response = WriteData(jsonList, "~/App_Data/Cart.json");
-            if (response == "Successfull")
-                return "Item removed from cart";
+
+            string response = WriteData(jsonList, Constants.Constants.cartUrl);
+
+            if (response == Constants.Constants.successfull)
+                return Constants.Constants.removeFromCart;
             else
-                return "Item cannot be removed from cart";
+                return Constants.Constants.cannotRemoveFromCart;
         }
 
         public List<DataContentsModel> GetAllData(string Url)
@@ -79,11 +82,11 @@ namespace MusicStore.Infrastructure.Repository
             try
             {
                 File.WriteAllText(HttpContext.Current.Server.MapPath(url), json);
-                return "Successfull";
+                return Constants.Constants.successfull;
             }
             catch (Exception ex)
             {
-                return "Unsuccessfull";
+                return Constants.Constants.unsuccessfull;
             }
 
         }

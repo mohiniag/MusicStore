@@ -1,6 +1,0 @@
-C:\Projects\MusicStore\MusicStore.Data\bin\Debug\MusicStore.Data.dll
-C:\Projects\MusicStore\MusicStore.Data\bin\Debug\MusicStore.Data.pdb
-C:\Projects\MusicStore\MusicStore.Data\obj\Debug\MusicStore.Data.csprojResolveAssemblyReference.cache
-C:\Projects\MusicStore\MusicStore.Data\obj\Debug\MusicStore.Data.dll
-C:\Projects\MusicStore\MusicStore.Data\obj\Debug\MusicStore.Data.pdb
-C:\Projects\MusicStore\MusicStore.Data\bin\Debug\JsonData\Cart.json

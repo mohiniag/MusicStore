@@ -13,7 +13,7 @@ namespace MusicStore.Controllers
         {
             IDatabaseCalls dbinterface = new DatabaseCallImpl();
 
-            List<DataContentsModel> data = dbinterface.GetAllData("~/App_Data/Data.json");
+            List<DataContentsModel> data = dbinterface.GetAllData(Constants.Constants.dataUrl);
             if (data == null|| !data.Any())
             {
                 return View("Error");

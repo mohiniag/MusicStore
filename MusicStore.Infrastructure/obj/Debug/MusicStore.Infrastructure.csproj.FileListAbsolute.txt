@@ -4,8 +4,5 @@ C:\Projects\MusicStore\MusicStore.Infrastructure\obj\Debug\MusicStore.Infrastruc
 C:\Projects\MusicStore\MusicStore.Infrastructure\obj\Debug\MusicStore.Infrastructure.dll
 C:\Projects\MusicStore\MusicStore.Infrastructure\obj\Debug\MusicStore.Infrastructure.pdb
 C:\Projects\MusicStore\MusicStore.Infrastructure\bin\Debug\MusicStore.Core.dll
-C:\Projects\MusicStore\MusicStore.Infrastructure\bin\Debug\MusicStore.Data.dll
 C:\Projects\MusicStore\MusicStore.Infrastructure\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\MusicStore\MusicStore.Infrastructure\bin\Debug\MusicStore.Core.pdb
-C:\Projects\MusicStore\MusicStore.Infrastructure\bin\Debug\MusicStore.Data.pdb
-C:\Projects\MusicStore\MusicStore.Infrastructure\bin\Debug\JsonData\Cart.json

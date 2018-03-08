@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using MusicStore.Infrastructure.Repository;
 using MusicStore.Core.Interfaces.Repository;
 
+
 namespace MusicStore.Controllers
 {
     public class CartController : Controller
@@ -15,7 +16,8 @@ namespace MusicStore.Controllers
         {
             IDatabaseCalls dbc = new DatabaseCallImpl();
 
-            List<DataContentsModel> listofselecteddata = dbc.GetAllData("~/App_Data/Cart.json");
+      
+            List<DataContentsModel> listofselecteddata = dbc.GetAllData(Constants.Constants.cartUrl);
 
             if (listofselecteddata == null)
                 return View("ErrorLoading");

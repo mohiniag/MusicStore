@@ -196,6 +196,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -232,6 +233,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\Data.json" />
+    <Content Include="App_Data\Cart.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CartPage.js" />
     <Content Include="Scripts\HomePage.js" />
@@ -307,10 +311,6 @@
     <ProjectReference Include="..\MusicStore.Core\MusicStore.Core.csproj">
       <Project>{573b9d82-c475-44e3-9672-53c9bd9bc726}</Project>
       <Name>MusicStore.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MusicStore.Data\MusicStore.Data.csproj">
-      <Project>{fcf2faed-3b34-4362-82ed-ff87028ec32b}</Project>
-      <Name>MusicStore.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\MusicStore.Infrastructure\MusicStore.Infrastructure.csproj">
       <Project>{5bd28858-237e-4eee-aab8-1d762087b6f6}</Project>

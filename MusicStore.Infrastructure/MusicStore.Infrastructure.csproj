@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DatabaseCallImpl.cs" />
   </ItemGroup>
@@ -52,10 +53,6 @@
     <ProjectReference Include="..\MusicStore.Core\MusicStore.Core.csproj">
       <Project>{573b9d82-c475-44e3-9672-53c9bd9bc726}</Project>
       <Name>MusicStore.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MusicStore.Data\MusicStore.Data.csproj">
-      <Project>{fcf2faed-3b34-4362-82ed-ff87028ec32b}</Project>
-      <Name>MusicStore.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
