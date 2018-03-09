@@ -7,6 +7,13 @@ namespace MusicStore.Business.PaymentGateway
 {
    public class PaymentGateway : IPaymentGateway
     {
+        private readonly IPaymentClient paymentClient;
+
+        public PaymentGateway() {}
+        public PaymentGateway(IPaymentClient paymentClient)
+        {
+            this.paymentClient = paymentClient;
+        }
         public string FetchedCustomerDetails(CustomerDetails customerDetails)
         {
 
@@ -48,7 +55,7 @@ namespace MusicStore.Business.PaymentGateway
                            "&CURRENCYCODE=USD" +
                            "&DESC=Test Sale Tickets" +
                            "&INVNUM=" + "";
-            IPaymentClient paymentClient = new PaymentClient();
+           
             string response=paymentClient.MakePayment(strNVP, strNVPSandboxServer);
             return response;
         }

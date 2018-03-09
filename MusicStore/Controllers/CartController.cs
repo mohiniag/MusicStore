@@ -10,14 +10,23 @@ namespace MusicStore.Controllers
 {
     public class CartController : Controller
     {
+        private readonly IDatabaseCalls _dbCall;
+
+        public CartController()
+        {
+
+        }
+        public CartController(IDatabaseCalls _dbCall)
+        {
+            this._dbCall = _dbCall;
+        }
+
 
         // GET: Cart
         public ActionResult Index()
         {
-            IDatabaseCalls dbc = new DatabaseCallImpl();
-
-      
-            List<DataContentsModel> listofselecteddata = dbc.GetAllData(Constants.Constants.cartUrl);
+                  
+            List<DataContentsModel> listofselecteddata = _dbCall.GetAllData(Constants.Constants.cartUrl);
 
             if (listofselecteddata == null)
                 return View("ErrorLoading");
@@ -32,16 +41,15 @@ namespace MusicStore.Controllers
         [HttpPost]
         public string Index(DataContentsModel dataset)
         {
-            IDatabaseCalls dbc = new DatabaseCallImpl();
-            string response = dbc.AddToCart(dataset);
+          
+            string response = _dbCall.AddToCart(dataset);
             return response;
 
         }
         [HttpPost]
         public string RemoveItem(int ID)
         {
-            IDatabaseCalls dbc = new DatabaseCallImpl();
-            string response = dbc.RemoveFromCart(ID);
+            string response = _dbCall.RemoveFromCart(ID);
             return response;
         }
         public ActionResult Payment(decimal amount)

@@ -7,3 +7,5 @@ C:\Projects\MusicStore\MusicStore.Business\obj\Debug\MusicStore.Business.dll
 C:\Projects\MusicStore\MusicStore.Business\obj\Debug\MusicStore.Business.pdb
 C:\Projects\MusicStore\MusicStore.Business\bin\Debug\Payment.dll
 C:\Projects\MusicStore\MusicStore.Business\bin\Debug\Payment.pdb
+C:\Projects\MusicStore\MusicStore.Business\bin\Debug\Autofac.dll
+C:\Projects\MusicStore\MusicStore.Business\bin\Debug\Autofac.xml

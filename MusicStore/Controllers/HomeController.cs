@@ -9,11 +9,22 @@ namespace MusicStore.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IDatabaseCalls _dbCall;
+
+        public HomeController()
+        {
+            
+        }
+        public HomeController(IDatabaseCalls _dbCall)
+        {
+            this._dbCall = _dbCall;
+        }
+
         public ActionResult Index()
         {
-            IDatabaseCalls dbinterface = new DatabaseCallImpl();
+          
 
-            List<DataContentsModel> data = dbinterface.GetAllData(Constants.Constants.dataUrl);
+            List<DataContentsModel> data = _dbCall.GetAllData(Constants.Constants.dataUrl);
             if (data == null|| !data.Any())
             {
                 return View("Error");

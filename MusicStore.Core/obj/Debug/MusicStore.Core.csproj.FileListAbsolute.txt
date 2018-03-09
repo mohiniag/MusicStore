@@ -4,3 +4,5 @@ C:\Projects\MusicStore\MusicStore.Core\obj\Debug\MusicStore.Core.dll
 C:\Projects\MusicStore\MusicStore.Core\obj\Debug\MusicStore.Core.pdb
 C:\Projects\MusicStore\MusicStore.Core\obj\Debug\MusicStore.Core.csprojResolveAssemblyReference.cache
 C:\Projects\MusicStore\MusicStore.Core\bin\Debug\System.Web.Mvc.dll
+C:\Projects\MusicStore\MusicStore.Core\bin\Debug\Autofac.dll
+C:\Projects\MusicStore\MusicStore.Core\bin\Debug\Autofac.xml

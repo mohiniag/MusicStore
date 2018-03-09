@@ -8,6 +8,16 @@ namespace MusicStore.Controllers
     public class MakePaymentController : Controller
     {
         // GET: MakePayment
+        private readonly IPaymentGateway paymentGateway;
+
+        public MakePaymentController()
+        {
+
+        }
+        public MakePaymentController(IPaymentGateway paymentGateway)
+        {
+            this.paymentGateway = paymentGateway;
+        }
 
         [Route("pay/{amount:decimal}/creditcard")]
         public ActionResult Index(decimal amount)
@@ -19,8 +29,7 @@ namespace MusicStore.Controllers
         [HttpPost]
         public ActionResult pay(CustomerDetails model)
         {
-            IPaymentGateway paymentGateway = new PaymentGateway();
-
+           
             if (ModelState.IsValid)
             {
 
