@@ -1,7 +1,7 @@
 ﻿using MusicStore.Core.Models;
 using System.Web.Mvc;
 using MusicStore.Core.Interfaces.Repository;
-using MusicStore.Business.PaymentGateway;
+
 
 namespace MusicStore.Controllers
 {
@@ -10,10 +10,8 @@ namespace MusicStore.Controllers
         // GET: MakePayment
         private readonly IPaymentGateway paymentGateway;
 
-        public MakePaymentController()
-        {
-
-        }
+        public MakePaymentController() { }
+        
         public MakePaymentController(IPaymentGateway paymentGateway)
         {
             this.paymentGateway = paymentGateway;

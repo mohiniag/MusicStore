@@ -26,38 +26,44 @@ namespace MusicStore.Business.PaymentGateway
                ConfigurationManager.AppSettings["NVPSandboxServer"].ToString();
 
             string strAPIVersion = "60.0";
-            string strNVP = "METHOD=DoDirectPayment" +
-                           "&VERSION=" + strAPIVersion +
-                           "&PWD=" + strPassword +
-                           "&USER=" + strUsername +
-                           "&SIGNATURE=" + strSignature +
-                           "&PAYMENTACTION=Sale" +
-                           "&IPADDRESS="+customerDetails.customerIp +
-                           "&RETURNFMFDETAILS=0" +
-                           "&CREDITCARDTYPE=" + "Visa" +
-                           "&ACCT=" + "4111111111111111" +
-                           "&EXPDATE=" + customerDetails.CardExpiryMonth + customerDetails.CardExpiryYear +
-                           "&CVV2=" + customerDetails.CardCCVNo +
-                           "&STARTDATE=" +
-                           "&ISSUENUMBER=" +
-                           "&EMAIL="+customerDetails.EmailId +
-                           //the following  represents the billing details
-                           "&FIRSTNAME=" + customerDetails.FirstName+
-                           "&LASTNAME=" + customerDetails.LastName+
-                           "&STREET=" +customerDetails.Address+
-                           "&STREET2=" + "" +
-                           "&CITY=" + "Memphsis" +
-                           "&STATE=" + "TN" +
-                           "&COUNTRYCODE=US" +
-                           "&ZIP=" + "38134" +
-                           "&AMT=" +customerDetails.payableAmount
-                           +//orderdetails.GrandTotal.ToString("0.0")+
-                           "&CURRENCYCODE=USD" +
-                           "&DESC=Test Sale Tickets" +
-                           "&INVNUM=" + "";
+            string strNVP = FormUrl(customerDetails, strAPIVersion, strPassword, strUsername, strSignature);
+            
            
             string response=paymentClient.MakePayment(strNVP, strNVPSandboxServer);
             return response;
+        }
+        private string FormUrl(CustomerDetails customerDetails,string strAPIVersion, 
+                               string strPassword, string strUsername, string strSignature)
+        {
+            string strNVP = "METHOD=DoDirectPayment" +
+                          "&VERSION=" + strAPIVersion +
+                          "&PWD=" + strPassword +
+                          "&USER=" + strUsername +
+                          "&SIGNATURE=" + strSignature +
+                          "&PAYMENTACTION=Sale" +
+                          "&IPADDRESS=" + customerDetails.customerIp +
+                          "&RETURNFMFDETAILS=0" +
+                          "&CREDITCARDTYPE=" + "Visa" +
+                          "&ACCT=" + "4111111111111111" +
+                          "&EXPDATE=" + customerDetails.CardExpiryMonth + customerDetails.CardExpiryYear +
+                          "&CVV2=" + customerDetails.CardCCVNo +
+                          "&STARTDATE=" +
+                          "&ISSUENUMBER=" +
+                          "&EMAIL=" + customerDetails.EmailId +
+                          //the following  represents the billing details
+                          "&FIRSTNAME=" + customerDetails.FirstName +
+                          "&LASTNAME=" + customerDetails.LastName +
+                          "&STREET=" + customerDetails.Address +
+                          "&STREET2=" + "" +
+                          "&CITY=" + "Memphsis" +
+                          "&STATE=" + "TN" +
+                          "&COUNTRYCODE=US" +
+                          "&ZIP=" + "38134" +
+                          "&AMT=" + customerDetails.payableAmount
+                          +"&CURRENCYCODE=USD" +
+                          "&DESC=Test Sale Tickets" +
+                          "&INVNUM=" + "";
+            return strNVP;
         }
     }
 }

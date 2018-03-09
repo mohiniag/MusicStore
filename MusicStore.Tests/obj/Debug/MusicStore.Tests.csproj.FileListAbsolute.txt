@@ -71,3 +71,7 @@ C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\Moq.pdb
 C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\Moq.xml
 C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\System.ValueTuple.xml
+C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\Autofac.dll
+C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\Autofac.xml
+C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\Autofac.Integration.Mvc.xml

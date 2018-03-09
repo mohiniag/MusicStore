@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using MusicStore.Infrastructure.Repository;
 using MusicStore.Core.Interfaces.Repository;
 
 
@@ -12,15 +11,11 @@ namespace MusicStore.Controllers
     {
         private readonly IDatabaseCalls _dbCall;
 
-        public CartController()
-        {
-
-        }
+       
         public CartController(IDatabaseCalls _dbCall)
         {
             this._dbCall = _dbCall;
         }
-
 
         // GET: Cart
         public ActionResult Index()
@@ -37,7 +32,7 @@ namespace MusicStore.Controllers
                 return View(listofselecteddata);
 
         }
-
+        
         [HttpPost]
         public string Index(DataContentsModel dataset)
         {

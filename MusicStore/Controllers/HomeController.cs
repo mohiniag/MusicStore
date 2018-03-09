@@ -1,6 +1,5 @@
 ﻿using MusicStore.Core.Interfaces.Repository;
 using MusicStore.Core.Models;
-using MusicStore.Infrastructure.Repository;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -11,10 +10,7 @@ namespace MusicStore.Controllers
     {
         private readonly IDatabaseCalls _dbCall;
 
-        public HomeController()
-        {
-            
-        }
+
         public HomeController(IDatabaseCalls _dbCall)
         {
             this._dbCall = _dbCall;

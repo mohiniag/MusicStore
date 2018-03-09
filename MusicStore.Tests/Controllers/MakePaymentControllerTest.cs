@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using MusicStore.Controllers;
+using MusicStore.Core.Interfaces.Repository;
 using MusicStore.Core.Models;
 using System.Web.Mvc;
 
@@ -24,11 +26,15 @@ namespace MusicStore.Tests.Controllers
         [TestMethod]
         public void pay()
         {
-            // Arrange
-            MakePaymentController controller = new MakePaymentController();
-
-            // Act
+  
             CustomerDetails customerDetails = SetModelData();
+            string error = "Cannot make payment";
+
+            Mock<IPaymentGateway> mock = new Mock<IPaymentGateway>();
+            mock.Setup(g => g.FetchedCustomerDetails(It.IsAny<CustomerDetails>())).Returns(error);
+
+            MakePaymentController controller = new MakePaymentController(mock.Object);
+
             ViewResult result = controller.pay(customerDetails) as ViewResult;
 
             // Assert

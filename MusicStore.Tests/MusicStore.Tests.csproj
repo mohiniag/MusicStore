@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessTest\PaymentGatewayTest\PaymentGatewayTest.cs" />
     <Compile Include="Controllers\CartControllerTest.cs" />
     <Compile Include="Controllers\MakePaymentControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,6 +121,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MusicStore.Business\MusicStore.Business.csproj">
+      <Project>{8E9C64D7-A70A-4C0C-A0F3-7D4C8C173798}</Project>
+      <Name>MusicStore.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MusicStore.Core\MusicStore.Core.csproj">
       <Project>{573B9D82-C475-44E3-9672-53C9BD9BC726}</Project>
       <Name>MusicStore.Core</Name>
@@ -133,6 +138,7 @@
       <Name>MusicStore</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
