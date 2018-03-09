@@ -34,7 +34,7 @@ namespace MusicStore.Tests.BusinessTest.PaymentGatewayTest
             customerDetails.CardExpiryYear = "2018";
             customerDetails.CardNo = "1234567889234566";
             customerDetails.EmailId = "mohini@gmail.com";
-            customerDetails.PhoneNo = "8860993898";
+            customerDetails.PhoneNo = "8860593898";
             customerDetails.State = "NY";
             return customerDetails;
         }

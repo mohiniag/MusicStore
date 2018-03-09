@@ -52,7 +52,7 @@ namespace MusicStore.Tests.Controllers
             customerDetails.CardExpiryYear = "2018";
             customerDetails.CardNo = "1234567889234566";
             customerDetails.EmailId = "mohini@gmail.com";
-            customerDetails.PhoneNo = "8860993898";
+            customerDetails.PhoneNo = "8811293898";
             customerDetails.State = "NY";
             return customerDetails;
         }
