@@ -10,3 +10,8 @@
         });
 
 }
+function proceedToPay(amount) {
+
+   
+
+}

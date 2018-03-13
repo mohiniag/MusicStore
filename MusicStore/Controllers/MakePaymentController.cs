@@ -17,11 +17,11 @@ namespace MusicStore.Controllers
             this.paymentGateway = paymentGateway;
         }
 
-        [Route("pay/{amount:decimal}/creditcard")]
-        public ActionResult Index(decimal amount)
+        [Route("pay/creditcard")]
+        public ActionResult Index(CartAmount cartamount)
         {
             CustomerDetails customerDetails = new CustomerDetails();
-            customerDetails.payableAmount = amount.ToString();
+            customerDetails.payableAmount = cartamount.amount.ToString();
             return View(customerDetails);
         }
         [HttpPost]
@@ -37,12 +37,12 @@ namespace MusicStore.Controllers
                 string paymentconfirmation = paymentGateway.FetchedCustomerDetails(model);
 
                 ViewBag.Data = paymentconfirmation;
-                return View("index");
+                return View("index",model);
             }
             else
             {
                 ViewBag.Data = "Enter Valid Details";
-                return View("index");
+                return View("index",model);
             }
             
         }

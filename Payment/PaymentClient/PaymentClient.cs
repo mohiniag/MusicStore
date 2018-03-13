@@ -34,33 +34,11 @@ namespace Payment.PaymentClient
                 string result = HttpContext.Current.Server.UrlDecode(responseData);
 
                 string[] arrResult = result.Split('&');
-                Hashtable htResponse = new Hashtable();
-                string[] responseItemArray;
-                foreach (string responseItem in arrResult)
-                {
-                    responseItemArray = responseItem.Split('=');
-                    htResponse.Add(responseItemArray[0], responseItemArray[1]);
-                }
-
-                string strAck = htResponse["ACK"].ToString();
-
-                if (strAck == "Success" || strAck == "SuccessWithWarning")
-                {
-
-                    string strAmt = htResponse["AMT"].ToString();
-                    string strCcy = htResponse["CURRENCYCODE"].ToString();
-                    string strTransactionID = htResponse["TRANSACTIONID"].ToString();
-                    string strSuccess = "Thank you, your order for: $" +
-                        strAmt + " " + strCcy + " has been processed.";
-                    return strSuccess;
-                }
-                else
-                {
-
-                    string error = "Error code: " + htResponse["L_ERRORCODE0"].ToString();
-                    return error;
-
-                }
+                
+                Hashtable htResponse = BuildResponse(arrResult);
+               
+                return BuildAcknowledge(htResponse);
+                
             }
             catch (Exception ex)
             {
@@ -68,6 +46,38 @@ namespace Payment.PaymentClient
                 return error;
             }
 
+        }
+        private Hashtable BuildResponse(string[] arrResult)
+        {
+            Hashtable htResponse = new Hashtable();
+            string[] responseItemArray;
+            foreach (string responseItem in arrResult)
+            {
+                responseItemArray = responseItem.Split('=');
+                htResponse.Add(responseItemArray[0], responseItemArray[1]);
+            }
+            return htResponse;
+        }
+        private string BuildAcknowledge(Hashtable htResponse)
+        {
+            string strAck = htResponse["ACK"].ToString();
+            if (strAck == "Success" || strAck == "SuccessWithWarning")
+            {
+
+                string strAmt = htResponse["AMT"].ToString();
+                string strCcy = htResponse["CURRENCYCODE"].ToString();
+                string strTransactionID = htResponse["TRANSACTIONID"].ToString();
+                string strSuccess = "Thank you, your order for: $" +
+                    strAmt + " " + strCcy + " has been processed.";
+                return strSuccess;
+            }
+            else
+            {
+
+                string error = "Error code: " + htResponse["L_ERRORCODE0"].ToString();
+                return error;
+
+            }
         }
     }
 

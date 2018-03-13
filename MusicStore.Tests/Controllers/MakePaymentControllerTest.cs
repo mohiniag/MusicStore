@@ -15,9 +15,10 @@ namespace MusicStore.Tests.Controllers
         {
             // Arrange
             MakePaymentController controller = new MakePaymentController();
-
+            CartAmount cartamount = new CartAmount();
+            cartamount.amount = 25.0M;
             // Act
-            ViewResult result = controller.Index(25) as ViewResult;
+            ViewResult result = controller.Index(cartamount) as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);

@@ -111,6 +111,7 @@
     <Compile Include="BusinessTest\PaymentGatewayTest\PaymentGatewayTest.cs" />
     <Compile Include="Controllers\CartControllerTest.cs" />
     <Compile Include="Controllers\MakePaymentControllerTest.cs" />
+    <Compile Include="Payment\PaymentClientTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
@@ -136,6 +137,10 @@
     <ProjectReference Include="..\MusicStore\MusicStore.csproj">
       <Project>{E0418C05-1BD3-48F2-BA83-D7BF16D9FF87}</Project>
       <Name>MusicStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Payment\Payment.csproj">
+      <Project>{B08DB79A-881A-4FF6-B9EF-5E9B9B9D6D1B}</Project>
+      <Name>Payment</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

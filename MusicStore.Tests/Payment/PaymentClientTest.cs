@@ -1,43 +1,33 @@
-﻿using MusicStore.Core.Interfaces.Repository;
-using MusicStore.Core.Models;
-using System.Configuration;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Payment.PaymentClient;
+using System.Configuration;
+using MusicStore.Core.Models;
 
-namespace MusicStore.Business.PaymentGateway
+namespace MusicStore.Tests.Payment
 {
-   public class PaymentGateway : IPaymentGateway
+    [TestClass]
+    public class PaymentClientTest
     {
-        private readonly IPaymentClient paymentClient;
+        [TestMethod]
+        public void MakePaymentTest()
+        {
+            PaymentClient paymentClient = new PaymentClient();
+            string strNVP = createStrNVP();
+            string strNVPSandboxServer = createstrNVPSandboxServer();
+            string response = paymentClient.MakePayment(strNVP, strNVPSandboxServer);
+            Assert.IsNotNull(response);
 
-        public PaymentGateway() {}
-        public PaymentGateway(IPaymentClient paymentClient)
-        {
-            this.paymentClient = paymentClient;
         }
-        public string FetchedCustomerDetails(CustomerDetails customerDetails)
+        private string createStrNVP()
         {
-                       
-            string strNVPSandboxServer =
-               ConfigurationManager.AppSettings["NVPSandboxServer"].ToString();
-            string strNVP = BuildDetails(customerDetails);
-            string response=paymentClient.MakePayment(strNVP, strNVPSandboxServer);
-            return response;
-        }
-        private string BuildDetails(CustomerDetails customerDetails)
-        {
+            CustomerDetails customerDetails = SetModelData();
             string strUsername = ConfigurationManager.AppSettings["InStoreAPIUsername"].ToString();
             string strPassword = ConfigurationManager.AppSettings["InStoreAPIPassword"].ToString();
             string strSignature = ConfigurationManager.AppSettings["InStoreAPISignature"].ToString();
             string strCredentials = "USER=" + strUsername +
             "&PWD=" + strPassword + "&SIGNATURE=" + strSignature;
             string strAPIVersion = "60.0";
-            string strNVP= FormUrl(customerDetails, strAPIVersion, strPassword, strUsername, strSignature);
-            return strNVP;
-
-        }
-        private string FormUrl(CustomerDetails customerDetails,string strAPIVersion, 
-                               string strPassword, string strUsername, string strSignature)
-        {
             string strNVP = "METHOD=DoDirectPayment" +
                           "&VERSION=" + strAPIVersion +
                           "&PWD=" + strPassword +
@@ -63,10 +53,30 @@ namespace MusicStore.Business.PaymentGateway
                           "&COUNTRYCODE=US" +
                           "&ZIP=" + "38134" +
                           "&AMT=" + customerDetails.payableAmount
-                          +"&CURRENCYCODE=USD" +
+                          + "&CURRENCYCODE=USD" +
                           "&DESC=Test Sale Tickets" +
                           "&INVNUM=" + "";
             return strNVP;
+        }
+        private CustomerDetails SetModelData()
+        {
+            CustomerDetails customerDetails = new CustomerDetails();
+            customerDetails.FirstName = "Mohini";
+            customerDetails.LastName = "Agarwal";
+            customerDetails.payableAmount = "25.0";
+            customerDetails.Address = "3/D Park avenue";
+            customerDetails.CardCCVNo = "134";
+            customerDetails.CardExpiryMonth = "Dec";
+            customerDetails.CardExpiryYear = "2018";
+            customerDetails.CardNo = "1234567889234566";
+            customerDetails.EmailId = "mohini@gmail.com";
+            customerDetails.PhoneNo = "8860593898";
+            customerDetails.State = "NY";
+            return customerDetails;
+        }
+        private string createstrNVPSandboxServer()
+        {
+            return  ConfigurationManager.AppSettings["NVPSandboxServer"].ToString();
         }
     }
 }

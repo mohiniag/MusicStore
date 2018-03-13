@@ -20,17 +20,14 @@ namespace MusicStore.Controllers
         // GET: Cart
         public ActionResult Index()
         {
-                  
+             return View();
+        }
+
+        public PartialViewResult cartlist()
+        {
             List<DataContentsModel> listofselecteddata = _dbCall.GetAllData(Constants.Constants.cartUrl);
 
-            if (listofselecteddata == null)
-                return View("ErrorLoading");
-            else if (!listofselecteddata.Any())
-                return View("NoItemInCart");
-            else
-
-                return View(listofselecteddata);
-
+            return PartialView("_cartlist", listofselecteddata);
         }
         
         [HttpPost]
@@ -47,10 +44,6 @@ namespace MusicStore.Controllers
             string response = _dbCall.RemoveFromCart(ID);
             return response;
         }
-        public ActionResult Payment(decimal amount)
-        {
-            return RedirectToRoute("payment", new { amount = amount });
-        }
-
+        
     }
 }

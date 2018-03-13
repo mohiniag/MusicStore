@@ -55,6 +55,7 @@
     <Compile Include="Interfaces\Repository\IDatabaseCalls.cs" />
     <Compile Include="Interfaces\Repository\IPaymentClient.cs" />
     <Compile Include="Interfaces\Repository\IPaymentGateway.cs" />
+    <Compile Include="Models\CartAmount.cs" />
     <Compile Include="Models\CustomerDetails.cs" />
     <Compile Include="Models\DataContentsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
