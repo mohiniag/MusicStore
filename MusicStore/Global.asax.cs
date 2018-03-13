@@ -1,10 +1,12 @@
 ﻿using MusicStore.App_Start;
+using System.Diagnostics.CodeAnalysis;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace MusicStore
 {
+    [ExcludeFromCodeCoverage]
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()

@@ -3,7 +3,7 @@ namespace MusicStore.Infrastructure.Constants
 {
     public static class Constants
     {
-        public const string cartUrl= "~/App_Data/Cart.json";
+        public const string cartUrl= "../../MusicStore.Data/JsonData/Cart.json";
         public const string cartDataNotAvailable = "Cart data not available";
         public const string addToCart = "Item added to cart";
         public const string successfull = "Successfull";

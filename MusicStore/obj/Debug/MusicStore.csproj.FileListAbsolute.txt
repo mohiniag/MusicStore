@@ -170,7 +170,6 @@ C:\Projects\MusicStore\MusicStore\bin\MusicStore.Business.dll
 C:\Projects\MusicStore\MusicStore\bin\Payment.dll
 C:\Projects\MusicStore\MusicStore\bin\MusicStore.Business.pdb
 C:\Projects\MusicStore\MusicStore\bin\Payment.pdb
-C:\Projects\MusicStore\MusicStore\bin\App_Data\Cart.json
 C:\Projects\MusicStore\MusicStore\bin\Autofac.dll
 C:\Projects\MusicStore\MusicStore\bin\Autofac.xml
 C:\Projects\MusicStore\MusicStore\bin\Autofac.Engine.dll

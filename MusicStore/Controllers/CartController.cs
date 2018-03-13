@@ -1,9 +1,9 @@
 ﻿using MusicStore.Core.Models;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
 using MusicStore.Core.Interfaces.Repository;
-
+using System;
+using System.IO;
 
 namespace MusicStore.Controllers
 {
@@ -25,7 +25,9 @@ namespace MusicStore.Controllers
 
         public PartialViewResult cartlist()
         {
-            List<DataContentsModel> listofselecteddata = _dbCall.GetAllData(Constants.Constants.cartUrl);
+            string filePath = Path.GetFullPath(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory).ToString() 
+                                                +Constants.Constants.cartUrl);
+            List<DataContentsModel> listofselecteddata = _dbCall.GetAllData(filePath);
 
             return PartialView("_cartlist", listofselecteddata);
         }

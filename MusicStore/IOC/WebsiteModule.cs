@@ -5,9 +5,11 @@ using MusicStore.Controllers;
 using MusicStore.Core.Interfaces.Repository;
 using MusicStore.Infrastructure.Repository;
 using Payment.PaymentClient;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MusicStore.IOC
 {
+    [ExcludeFromCodeCoverage]
     public class WebsiteModule:Module
     {
         protected override void Load(ContainerBuilder builder)

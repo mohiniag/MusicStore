@@ -7,16 +7,20 @@ using Newtonsoft.Json;
 using System.Linq;
 using MusicStore.Core.Interfaces.Repository;
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MusicStore.Infrastructure.Repository
 {
+    [ExcludeFromCodeCoverage]
     public class DatabaseCallImpl : IDatabaseCalls
     {
         public DatabaseCallImpl() { }
 
         public string AddToCart(DataContentsModel dataset)
         {
-            var jsonList = GetAllData(Constants.Constants.cartUrl);
+            string filePath = Path.GetFullPath(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory).ToString()
+                                                + Constants.Constants.cartUrl);
+            var jsonList = GetAllData(filePath);
 
             if (jsonList == null)
             {
@@ -25,7 +29,7 @@ namespace MusicStore.Infrastructure.Repository
 
             jsonList.Add(dataset);
 
-            string response = WriteData(jsonList, Constants.Constants.cartUrl);
+            string response = WriteData(jsonList, filePath);
 
             if (response == Constants.Constants.successfull)
 
@@ -37,8 +41,9 @@ namespace MusicStore.Infrastructure.Repository
 
         public string RemoveFromCart(int Id)
         {
-
-            var jsonList = GetAllData(Constants.Constants.cartUrl);
+            string filePath = Path.GetFullPath(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory).ToString()
+                                                + Constants.Constants.cartUrl);
+            var jsonList = GetAllData(filePath);
             if (jsonList == null || !jsonList.Any())
             {
                 return Constants.Constants.emptyCart;
@@ -46,8 +51,8 @@ namespace MusicStore.Infrastructure.Repository
             DataContentsModel item = jsonList.First(x => x.Id == Id);
 
             jsonList.Remove(item);
-
-            string response = WriteData(jsonList, Constants.Constants.cartUrl);
+            
+            string response = WriteData(jsonList, filePath);
 
             if (response == Constants.Constants.successfull)
                 return Constants.Constants.removeFromCart;
@@ -59,10 +64,8 @@ namespace MusicStore.Infrastructure.Repository
         {
 
             try
-            {
-                string file = HttpContext.Current.Server.MapPath(Url);
-                //deserialize JSON from file  
-                string data = File.ReadAllText(file);
+            { 
+                string data = File.ReadAllText(Url);
                 JavaScriptSerializer ser = new JavaScriptSerializer();
                 var songlist = JsonConvert.DeserializeObject<List<DataContentsModel>>(data);
                 return songlist;
@@ -81,7 +84,7 @@ namespace MusicStore.Infrastructure.Repository
             //write string to file
             try
             {
-                File.WriteAllText(HttpContext.Current.Server.MapPath(url), json);
+                File.WriteAllText(url, json);
                 return Constants.Constants.successfull;
             }
             catch (Exception ex)

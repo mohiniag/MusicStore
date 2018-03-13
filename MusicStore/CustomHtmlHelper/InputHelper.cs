@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace MusicStore.CustomHtmlHelper
 {
+    [ExcludeFromCodeCoverage]
     public static class InputHelper
     {
         public static MvcHtmlString CustomInput<TModel, TValue>(this HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, object htmlAttributes)

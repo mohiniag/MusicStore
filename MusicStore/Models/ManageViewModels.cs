@@ -2,9 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MusicStore.Models
 {
+    [ExcludeFromCodeCoverage]
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }
@@ -13,18 +15,18 @@ namespace MusicStore.Models
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
     }
-
+    [ExcludeFromCodeCoverage]
     public class ManageLoginsViewModel
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }
         public IList<AuthenticationDescription> OtherLogins { get; set; }
     }
-
+    [ExcludeFromCodeCoverage]
     public class FactorViewModel
     {
         public string Purpose { get; set; }
     }
-
+    [ExcludeFromCodeCoverage]
     public class SetPasswordViewModel
     {
         [Required]
@@ -38,7 +40,7 @@ namespace MusicStore.Models
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
-
+    [ExcludeFromCodeCoverage]
     public class ChangePasswordViewModel
     {
         [Required]
@@ -57,7 +59,7 @@ namespace MusicStore.Models
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
-
+    [ExcludeFromCodeCoverage]
     public class AddPhoneNumberViewModel
     {
         [Required]
@@ -65,7 +67,7 @@ namespace MusicStore.Models
         [Display(Name = "Phone Number")]
         public string Number { get; set; }
     }
-
+    [ExcludeFromCodeCoverage]
     public class VerifyPhoneNumberViewModel
     {
         [Required]
@@ -77,7 +79,7 @@ namespace MusicStore.Models
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
     }
-
+    [ExcludeFromCodeCoverage]
     public class ConfigureTwoFactorViewModel
     {
         public string SelectedProvider { get; set; }

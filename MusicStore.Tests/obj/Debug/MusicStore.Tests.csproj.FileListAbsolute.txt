@@ -53,7 +53,6 @@ C:\Projects\MusicStore\MusicStore.Tests\obj\Debug\MusicStore.Tests.dll
 C:\Projects\MusicStore\MusicStore.Tests\obj\Debug\MusicStore.Tests.pdb
 C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\MusicStore.Core.dll
 C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\MusicStore.Core.pdb
-C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\App_Data\Cart.json
 C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\MusicStore.Infrastructure.dll
 C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\MusicStore.Infrastructure.pdb
 C:\Projects\MusicStore\MusicStore.Tests\bin\Debug\MusicStore.Business.dll

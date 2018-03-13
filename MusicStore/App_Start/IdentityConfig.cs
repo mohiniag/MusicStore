@@ -11,9 +11,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using MusicStore.Models;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MusicStore
 {
+    [ExcludeFromCodeCoverage]
     public class EmailService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)
@@ -22,7 +24,7 @@ namespace MusicStore
             return Task.FromResult(0);
         }
     }
-
+    [ExcludeFromCodeCoverage]
     public class SmsService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)
@@ -31,7 +33,7 @@ namespace MusicStore
             return Task.FromResult(0);
         }
     }
-
+    [ExcludeFromCodeCoverage]
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
@@ -87,6 +89,7 @@ namespace MusicStore
             return manager;
         }
     }
+    [ExcludeFromCodeCoverage]
 
     // Configure the application sign-in manager which is used in this application.
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>

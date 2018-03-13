@@ -1,5 +1,8 @@
-﻿namespace MusicStore.Core.Models
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace MusicStore.Core.Models
 {
+    [ExcludeFromCodeCoverage]
     public class DataContentsModel
     {
         public int Id { get; set; }

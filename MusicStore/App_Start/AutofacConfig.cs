@@ -1,10 +1,12 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
 using MusicStore.IOC;
+using System.Diagnostics.CodeAnalysis;
 using System.Web.Mvc;
 
 namespace MusicStore.App_Start
 {
+    [ExcludeFromCodeCoverage]
     public class AutofacConfig
     {
         public static void ConfigureContainer()

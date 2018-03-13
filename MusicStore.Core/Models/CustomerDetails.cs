@@ -1,8 +1,10 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MusicStore.Core.Models
 {
+    [ExcludeFromCodeCoverage]
     public class CustomerDetails
     {
 
