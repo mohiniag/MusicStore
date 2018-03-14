@@ -1,4 +1,5 @@
 ﻿using MusicStore.App_Start;
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -16,6 +17,12 @@ namespace MusicStore
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutofacConfig.ConfigureContainer();
+        }
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception exception = Server.GetLastError();
+            Server.ClearError();
+            Response.Redirect("CustomErrorPage");
         }
     }
 }

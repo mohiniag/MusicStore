@@ -217,7 +217,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MakePaymentController.cs" />
     <Compile Include="CustomHtmlHelper\InputHelper.cs" />
-    <Compile Include="Filter\CustomExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
