@@ -1,10 +1,11 @@
 ﻿using MusicStore.Core.Models;
 using System.Web.Mvc;
 using MusicStore.Core.Interfaces.Repository;
-
+using MusicStore.Filter;
 
 namespace MusicStore.Controllers
 {
+    [CustomExceptionFilter]
     public class MakePaymentController : Controller
     {
         // GET: MakePayment

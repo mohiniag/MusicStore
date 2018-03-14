@@ -11,7 +11,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace MusicStore.Infrastructure.Repository
 {
-    [ExcludeFromCodeCoverage]
+   
     public class DatabaseCallImpl : IDatabaseCalls
     {
         public DatabaseCallImpl() { }

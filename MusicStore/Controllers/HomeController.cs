@@ -1,5 +1,6 @@
 ﻿using MusicStore.Core.Interfaces.Repository;
 using MusicStore.Core.Models;
+using MusicStore.Filter;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MusicStore.Controllers
 {
+    [CustomExceptionFilter]
     public class HomeController : Controller
     {
         private readonly IDatabaseCalls _dbCall;
@@ -20,7 +22,7 @@ namespace MusicStore.Controllers
 
         public ActionResult Index()
         {
-
+      
             string filePath = Path.GetFullPath(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory).ToString() 
                                                 + Constants.Constants.dataUrl);
             List<DataContentsModel> data = _dbCall.GetAllData(filePath);

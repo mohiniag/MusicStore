@@ -1,14 +1,15 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using MusicStore.Filter;
 using System.Web.Mvc;
 
 namespace MusicStore
 {
-    [ExcludeFromCodeCoverage]
+  
     public class FilterConfig
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new CustomExceptionFilter());
         }
     }
 }

@@ -4,9 +4,11 @@ using System.Web.Mvc;
 using MusicStore.Core.Interfaces.Repository;
 using System;
 using System.IO;
+using MusicStore.Filter;
 
 namespace MusicStore.Controllers
 {
+    [CustomExceptionFilter]
     public class CartController : Controller
     {
         private readonly IDatabaseCalls _dbCall;
